@@ -1,4 +1,13 @@
 {
-  "dependencies": {},
-  "overrides": {}
+  "name": "pizza-figlet",
+  "dependencies": {
+    "vue": "~0.10.5",
+    "figlet": "https://github.com/patorjk/figlet.js.git",
+    "jquery": "1.11"
+  },
+  "overrides": {
+    "figlet": {
+      "main": "lib/figlet.js"
+    }
+  }
 }
