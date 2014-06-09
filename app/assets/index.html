@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="./javascripts/vendor.js"></script>
+    <script src="./javascripts/app.js"></script>
+  </head>
+  <body>
+    <div id="demo">
+      <textarea v-model="text" v-on="keyup:figlet"></textarea>
+
+      <h2>binding</h2>
+      <div>{{ text }}</div>
+
+      <h2>binding (with figlet.js)</h2>
+      <pre>{{ hoge }}</pre>
+    </div>
+    <script>require('scripts/app');</script>
+  </body>
+</html>
