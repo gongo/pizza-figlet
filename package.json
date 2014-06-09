@@ -1,11 +1,11 @@
 {
-  "name": "your-app",
-  "description": "Description",
-  "author": "Your Name",
+  "name": "pizza-figlet",
+  "description": "Making large letters out of :pizza:",
+  "author": "Wataru MIYAGUNI <gonngo@gmail.com>",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/gongo/pizza-figlet"
   },
   "scripts": {
     "start": "brunch watch --server",
@@ -15,7 +15,6 @@
     "javascript-brunch": ">= 1.0 < 1.8",
     "css-brunch": ">= 1.0 < 1.8",
     "uglify-js-brunch": ">= 1.0 < 1.8",
-    "clean-css-brunch": ">= 1.0 < 1.8",
-    "auto-reload-brunch": ">= 1.0 < 1.8"
+    "clean-css-brunch": ">= 1.0 < 1.8"
   }
 }
