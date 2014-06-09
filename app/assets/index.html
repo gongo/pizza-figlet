@@ -7,13 +7,16 @@
   </head>
   <body>
     <div id="demo">
-      <textarea v-model="text" v-on="keyup:figlet"></textarea>
+      <textarea v-model="text" v-on="keyup:updateFigletText(text)"></textarea>
 
       <h2>binding</h2>
-      <div>{{ text }}</div>
+      <pre>{{ text }}</pre>
 
       <h2>binding (with figlet.js)</h2>
-      <pre>{{ hoge }}</pre>
+      <pre>{{ figletText }}</pre>
+
+      <h2>binding (convert emoji syntax)</h2>
+      <pre>{{ emojiText }}</pre>
     </div>
     <script>require('scripts/app');</script>
   </body>
