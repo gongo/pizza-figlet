@@ -20,6 +20,7 @@
     "css-brunch": ">= 1.0 < 1.8",
     "javascript-brunch": ">= 1.0 < 1.8",
     "node-static": "^0.7.3",
+    "nodetime": "^0.8.15",
     "uglify-js-brunch": ">= 1.0 < 1.8"
   },
   "engines": {
