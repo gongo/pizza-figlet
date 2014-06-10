@@ -7,16 +7,23 @@
   </head>
   <body>
     <div id="demo">
-      <textarea v-model="text" v-on="keyup:updateFigletText(text)"></textarea>
+      <script type="text/x-template" id="emoji-template">
+        <br v-if="!$value" />
+        <img v-if="$value" v-attr="width:'20', height:'20', src:$value" />
+      </script>
+
+      <textarea v-model="inputText" v-on="keyup:updateFigletText(inputText)"></textarea>
 
       <h2>binding</h2>
-      <pre>{{ text }}</pre>
+      <pre>{{ inputText }}</pre>
 
       <h2>binding (with figlet.js)</h2>
       <pre>{{ figletText }}</pre>
 
       <h2>binding (convert emoji syntax)</h2>
       <pre>{{ emojiText }}</pre>
+
+      <span v-repeat="printEmojiUrls" v-component="emoji"></span>
     </div>
     <script>require('scripts/app');</script>
   </body>
