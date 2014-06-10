@@ -2,28 +2,56 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/app.css">
+
     <script src="./javascripts/vendor.js"></script>
     <script src="./javascripts/app.js"></script>
+
+    <script type="text/x-template" id="emoji-template">
+      <br v-if="!$value" />
+      <img v-if="$value" class="emoji" v-attr="src:$value" />
+    </script>
   </head>
   <body>
-    <div id="demo">
-      <script type="text/x-template" id="emoji-template">
-        <br v-if="!$value" />
-        <img v-if="$value" v-attr="width:'20', height:'20', src:$value" />
-      </script>
+    <div class="container" id="demo">
+      <div class="page-header">
+        <h1>Pizza FIGlet</h1>
+      </div>
 
-      <textarea v-model="inputText" v-on="keyup:updateFigletText(inputText)"></textarea>
+      <div class="row">
+        <div id="form" class="col-xs-12 col-md-5">
+          <span class="glyphicon glyphicon-pencil"></span>
+          Enter the text want to emojinize! (Only <strong>ASCII printable characters</strong>)
+          <textarea style="width: 100%;"
+                    v-model="inputText" v-on="keyup:updateFigletText(inputText)">
+          </textarea>
+        </div>
+      </div>
 
-      <h2>binding</h2>
-      <pre>{{ inputText }}</pre>
+      <div class="row">
+        <div id="source-pizza-figlet" class="col-xs-12 col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>FIGlet source</strong>
+            </div>
+            <div class="panel-body">
+              <pre>{{ emojiText }}</pre>
+            </div>
+          </div>
+        </div>
 
-      <h2>binding (with figlet.js)</h2>
-      <pre>{{ figletText }}</pre>
-
-      <h2>binding (convert emoji syntax)</h2>
-      <pre>{{ emojiText }}</pre>
-
-      <span v-repeat="printEmojiUrls" v-component="emoji"></span>
+        <div id="result-pizza-figlet" class="col-xs-12 col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>Preview</strong>
+            </div>
+            <div class="panel-body">
+              <span v-repeat="printEmojiUrls" v-component="emoji"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script>require('scripts/app');</script>
   </body>

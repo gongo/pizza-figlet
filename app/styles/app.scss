@@ -1,0 +1,28 @@
+#form {
+  margin-bottom: 2em;
+
+  textarea {
+    margin-top: 0.5em;
+  }
+}
+
+#source-pizza-figlet {
+  pre {
+    white-space: pre;
+    overflow: scroll;
+    word-wrap: normal;
+  }
+}
+
+#result-pizza-figlet {
+  .panel-body {
+    white-space: nowrap;
+    overflow: scroll;
+  }
+
+  img.emoji {
+    width: 20px;
+    height: 20px;
+    display: inline;
+  }
+}
