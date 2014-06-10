@@ -7,6 +7,10 @@
     "type": "git",
     "url": "https://github.com/gongo/pizza-figlet"
   },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT"
+  } ],
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
