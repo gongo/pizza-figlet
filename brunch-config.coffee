@@ -10,8 +10,7 @@ exports.config =
       defaultExtension: 'scss'
       joinTo:
         'stylesheets/app.css'
-    templates:
-      joinTo: 'app.js'
+
   plugins:
     sass:
       debug: 'comments'

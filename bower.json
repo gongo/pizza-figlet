@@ -3,7 +3,8 @@
   "dependencies": {
     "vue": "~0.10.5",
     "figlet": "https://github.com/patorjk/figlet.js.git",
-    "jquery": "1.11"
+    "jquery": "1.11",
+    "zeroclipboard": "~2.1.1"
   },
   "overrides": {
     "figlet": {

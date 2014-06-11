@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="stylesheets/app.css">
 
     <script src="./javascripts/vendor.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="./javascripts/app.js"></script>
 
     <script type="text/x-template" id="emoji-template">
@@ -39,6 +40,13 @@
             </div>
             <div class="panel-body">
               <pre>{{ emojiText }}</pre>
+              <p class="text-left">
+                <button id="copy-icon"
+                        class="button button-default glyphicon glyphicon-paperclip"
+                        data-clipboard-text="{{ emojiText }}"
+                        data-toggle="tooltip"
+                        title="Click to copy me."></button>
+              </p>
             </div>
           </div>
         </div>

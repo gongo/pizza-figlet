@@ -1,3 +1,9 @@
+ZeroClipboard.config({ swfPath: "./ZeroClipboard.swf" });
+
+clipboardButton = $('#copy-icon')
+clipboardButton.tooltip()
+new ZeroClipboard(clipboardButton.get(0))
+
 Vue.component 'emoji', { template: '#emoji-template' }
 
 new Vue
