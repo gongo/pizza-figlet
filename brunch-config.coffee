@@ -7,10 +7,6 @@ exports.config =
         'javascripts/app.js': /^app/
         'javascripts/vendor.js': /^bower_components/
     stylesheets:
-      defaultExtension: 'scss'
+      defaultExtension: 'less'
       joinTo:
-        'stylesheets/app.css'
-
-  plugins:
-    sass:
-      debug: 'comments'
+        'stylesheets/app.css': /^app\/styles/
