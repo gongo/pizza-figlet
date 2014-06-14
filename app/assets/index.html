@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheets/app.css">
 
     <script src="./javascripts/vendor.js"></script>
@@ -33,12 +32,10 @@
       </div>
 
       <div class="row">
-        <div id="source-pizza-figlet" class="col-xs-12 col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <strong>FIGlet source</strong>
-            </div>
-            <div class="panel-body">
+        <div class="col-xs-12 col-md-6">
+          <article class="f-panel" id="source-pizza-figlet">
+            <header>FIGlet source</header>
+            <section>
               <pre>{{ emojiText }}</pre>
               <p class="text-left">
                 <button id="copy-icon"
@@ -47,19 +44,17 @@
                         data-toggle="tooltip"
                         title="Click to copy me."></button>
               </p>
-            </div>
-          </div>
+            </section>
+          </article>
         </div>
 
-        <div id="result-pizza-figlet" class="col-xs-12 col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <strong>Preview</strong>
-            </div>
-            <div class="panel-body">
+        <div class="col-xs-12 col-md-6">
+          <article class="f-panel" id="result-pizza-figlet" >
+            <header>Preview</header>
+            <section>
               <span v-repeat="printEmojiUrls" v-component="emoji"></span>
-            </div>
-          </div>
+            </section>
+          </article>
         </div>
       </div>
 
