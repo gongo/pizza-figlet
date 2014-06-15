@@ -25,15 +25,14 @@
         <div id="form" class="col-xs-12 col-md-5">
           <span class="glyphicon glyphicon-pencil"></span>
           Enter the text want to emojinize! (Only <strong>ASCII printable characters</strong>)
-          <textarea style="width: 100%;"
-                    v-model="inputText" v-on="keyup:updateFigletText(inputText)">
+          <textarea v-model="inputText" v-on="keyup:updateFigletText(inputText)">
           </textarea>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <article class="f-panel" id="source-pizza-figlet">
+          <article id="source-pizza-figlet">
             <header>FIGlet source</header>
             <section>
               <pre>{{ emojiText }}</pre>
@@ -49,7 +48,7 @@
         </div>
 
         <div class="col-xs-12 col-md-6">
-          <article class="f-panel" id="result-pizza-figlet" >
+          <article id="result-pizza-figlet" >
             <header>Preview</header>
             <section>
               <span v-repeat="printEmojiUrls" v-component="emoji"></span>

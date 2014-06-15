@@ -1,14 +1,6 @@
 @import "bower_components/bootstrap/less/bootstrap";
 
-#form {
-  margin-bottom: 2em;
-
-  textarea {
-    margin-top: 0.5em;
-  }
-}
-
-article.f-panel {
+.f-panel() {
     .panel;
     .panel-default;
 
@@ -23,7 +15,18 @@ article.f-panel {
     }
 }
 
+#form {
+    margin-bottom: 2em;
+
+    textarea {
+        width: 100%;
+        margin-top: 0.5em;
+    }
+}
+
 #source-pizza-figlet {
+    .f-panel;
+
     section {
         pre {
             white-space: pre;
@@ -34,6 +37,8 @@ article.f-panel {
 }
 
 #result-pizza-figlet {
+    .f-panel;
+
     section {
         white-space: nowrap;
         overflow: scroll;
@@ -46,8 +51,8 @@ article.f-panel {
     }
 }
 
-// // Sticky footer styles
-// // refs: http://getbootstrap.com/examples/sticky-footer/sticky-footer.css
+// Sticky footer styles
+// refs: http://getbootstrap.com/examples/sticky-footer/sticky-footer.css
 
 html {
   position: relative;
