@@ -1,5 +1,4 @@
 exports.config =
-  # See http://brunch.io/#documentation for docs.
   sourceMaps: false
   files:
     javascripts:
@@ -10,3 +9,5 @@ exports.config =
       defaultExtension: 'less'
       joinTo:
         'stylesheets/app.css': /^app\/styles/
+    templates:
+      joinTo: 'javascripts/app.js'
