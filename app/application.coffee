@@ -19,21 +19,21 @@ new Vue
 
   methods:
     fetchEmojiUrls: ->
-      apiUrl = 'https://api.github.com/emojis'
-
-      xhr = new XMLHttpRequest
-      xhr.open 'GET', apiUrl
-      xhr.onload = =>
-        @emojiUrls = JSON.parse(xhr.responseText)
-      xhr.send()
+      superagent
+        .get('https://api.github.com/emojis')
+        .end (res) =>
+          @emojiUrls = JSON.parse(res.text)
 
     updateFigletText: (text) ->
-      figlet text, 'Old Banner', (err, resultText) =>
-        @$set 'figletText', resultText
+      superagent
+        .get('/figlet')
+        .query({ text: text })
+        .end (res) =>
+          @figletText = res.text
 
     updateEmojiText: (text) ->
       emojiText = text.replace(/\S/g, ':pizza:').replace(/[^\n\S]/g, ':cloud:')
-      @$set 'emojiText', emojiText
+      @emojiText = emojiText
 
     updatePrintEmojiUrls: (text) ->
       @printEmojiUrls.length = 0
