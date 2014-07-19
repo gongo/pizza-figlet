@@ -35,7 +35,7 @@ Getting started
     $ npm start
     ```
 
-1. Access to [http://localhost:3333/](http://localhost:3333)
+1. Access to [http://localhost:8080/](http://localhost:8080)
 
 License
 --------------------
