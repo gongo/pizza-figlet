@@ -33,7 +33,6 @@
     "html-brunch": "^1.6.1",
     "javascript-brunch": ">= 1.0 < 1.8",
     "less-brunch": "^1.7.2",
-    "node-static": "^0.7.3",
     "nodetime": "^0.8.15",
     "sass-brunch": "^1.8.1",
     "uglify-js-brunch": ">= 1.0 < 1.8"
@@ -42,12 +41,6 @@
     "node": "0.10.x"
   },
   "devDependencies": {
-    "coffee-script": "^1.7.1",
-    "gulp": "^3.8.1",
-    "gulp-coffee": "^2.0.1",
-    "gulp-espower": "^0.7.1",
-    "gulp-mocha": "^0.4.1",
-    "node-dev": "^2.3.0",
-    "power-assert": "^0.7.2"
+    "node-dev": "^2.3.0"
   }
 }
