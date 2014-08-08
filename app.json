@@ -1,0 +1,6 @@
+{
+  "name": "Pizza-FIGlet",
+  "description": "Making large letters out of :pizza:",
+  "repository": "https://github.com/gongo/pizza-figlet",
+  "keywords": ["figlet", "pizza", "vuejs"]
+}
