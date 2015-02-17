@@ -37,8 +37,12 @@ new Vue
 
     updatePrintEmojiUrls: (text) ->
       @printEmojiUrls.length = 0
+      urls = []
+
       re = /(?::([\w+-]+?):|\n)/g # :emoji-syntax: or return code
 
       while (m = re.exec(text))?
         key = m[1]
-        @printEmojiUrls.push @emojiUrls[key]
+        urls.push @emojiUrls[key]
+
+      @printEmojiUrls = urls
