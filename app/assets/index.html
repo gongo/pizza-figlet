@@ -30,8 +30,7 @@
           <article id="source-pizza-figlet">
             <header>FIGlet source</header>
             <section>
-              <pre>{{ emojiText }}</pre>
-              <p id="clippy" v-component="clippy"></p>
+              <textarea rows="16" readonly v-model="emojiText" v-on="click: selectSource"></textarea>
             </section>
           </article>
         </div>

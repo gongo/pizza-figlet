@@ -2,7 +2,6 @@ new Vue
   el: '#demo'
 
   components:
-    clippy: require('components/clippy')
     emoji: require('components/emoji')
 
   created: ->
@@ -18,6 +17,9 @@ new Vue
     printEmojiUrls: []
 
   methods:
+    selectSource: (e) ->
+      e.target.select()
+
     fetchEmojiUrls: ->
       superagent
         .get('https://api.github.com/emojis')

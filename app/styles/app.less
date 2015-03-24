@@ -24,25 +24,16 @@
     }
 }
 
-#clippy {
-    .text-right;
-
-    > button {
-        .btn;
-        .btn-default;
-        .glyphicon;
-        .glyphicon-paperclip;
-    }
-}
-
 #source-pizza-figlet {
     .f-panel;
 
     section {
-        pre {
-            white-space: pre;
-            overflow: scroll;
-            word-wrap: normal;
+        textarea {
+            .form-control;
+
+            resize: vertical;
+            overflow: auto; // Safari fix
+            height: auto;
         }
     }
 }
