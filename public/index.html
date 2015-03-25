@@ -26,9 +26,7 @@
         <div class="col-xs-12 col-md-6">
           <article id="source-pizza-figlet">
             <header>FIGlet source</header>
-            <section>
-              <textarea rows="16" readonly v-model="emojiText" v-on="click: selectSource"></textarea>
-            </section>
+            <section v-component="source" v-with="source: emojiText"></section>
           </article>
         </div>
 

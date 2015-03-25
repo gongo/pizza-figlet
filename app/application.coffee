@@ -6,25 +6,19 @@ new Vue
 
   components:
     emoji: require('./components/emoji.vue')
-
-  created: ->
-    @$watch 'figletText', (newText) -> @updateEmojiText(newText)
+    source: require('./components/source.vue')
 
   data:
     inputText: ''
-    figletText: ''
     emojiText: ''
 
   methods:
-    selectSource: (e) ->
-      e.target.select()
-
     updateFigletText: (text) ->
       request
         .get('/figlet')
         .query({ text: text })
         .end (err, res) =>
-          @figletText = res.text
+          @updateEmojiText(res.text)
 
     updateEmojiText: (text) ->
       emojiText = text.replace(/\S/g, ':pizza:').replace(/[^\n\S]/g, ':cloud:')
