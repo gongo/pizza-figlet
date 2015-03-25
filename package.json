@@ -14,7 +14,8 @@
     }
   ],
   "scripts": {
-    "start": "gulp dev"
+    "start": "gulp dev",
+    "postinstall": "gulp default"
   },
   "directories": {
     "test": "test/"

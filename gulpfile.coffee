@@ -20,8 +20,8 @@ gulp.task 'js', ->
     transform: ['coffeeify', 'vueify']
   .bundle()
   .pipe source('build.js')
-  # .pipe buffer()
-  # .pipe minifyJs()
+  .pipe buffer()
+  .pipe minifyJs()
   .pipe gulp.dest('public/build')
 
 gulp.task 'css', ->
