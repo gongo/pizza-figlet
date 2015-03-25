@@ -1,50 +1,31 @@
+Vue     = require 'vue'
+request = require 'superagent'
+
 new Vue
   el: '#demo'
 
   components:
-    emoji: require('components/emoji')
+    emoji: require('./components/emoji.vue')
 
   created: ->
-    @fetchEmojiUrls()
     @$watch 'figletText', (newText) -> @updateEmojiText(newText)
-    @$watch 'emojiText',  (newText) -> @updatePrintEmojiUrls(newText)
 
   data:
     inputText: ''
     figletText: ''
     emojiText: ''
-    emojiUrls: []
-    printEmojiUrls: []
 
   methods:
     selectSource: (e) ->
       e.target.select()
 
-    fetchEmojiUrls: ->
-      superagent
-        .get('https://api.github.com/emojis')
-        .end (res) =>
-          @emojiUrls = JSON.parse(res.text)
-
     updateFigletText: (text) ->
-      superagent
+      request
         .get('/figlet')
         .query({ text: text })
-        .end (res) =>
+        .end (err, res) =>
           @figletText = res.text
 
     updateEmojiText: (text) ->
       emojiText = text.replace(/\S/g, ':pizza:').replace(/[^\n\S]/g, ':cloud:')
       @emojiText = emojiText
-
-    updatePrintEmojiUrls: (text) ->
-      @printEmojiUrls.length = 0
-      urls = []
-
-      re = /(?::([\w+-]+?):|\n)/g # :emoji-syntax: or return code
-
-      while (m = re.exec(text))?
-        key = m[1]
-        urls.push @emojiUrls[key]
-
-      @printEmojiUrls = urls
