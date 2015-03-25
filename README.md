@@ -3,7 +3,7 @@ Pizza FIGlet
 
 Making large letters out of :pizza:
 
-![](./image/screenshot.png)
+![](./image/demo.gif)
 
 Requirements
 --------------------
