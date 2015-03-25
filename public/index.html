@@ -2,10 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesheets/app.css">
-
-    <script src="./javascripts/vendor.js"></script>
-    <script src="./javascripts/app.js"></script>
+    <link rel="stylesheet" href="./build/build.css">
   </head>
 
   <body>
@@ -29,18 +26,14 @@
         <div class="col-xs-12 col-md-6">
           <article id="source-pizza-figlet">
             <header>FIGlet source</header>
-            <section>
-              <textarea rows="16" readonly v-model="emojiText" v-on="click: selectSource"></textarea>
-            </section>
+            <section v-component="source" v-with="source: emojiText"></section>
           </article>
         </div>
 
         <div class="col-xs-12 col-md-6">
           <article id="result-pizza-figlet" >
             <header>Preview</header>
-            <section>
-              <span v-repeat="printEmojiUrls" v-component="emoji"></span>
-            </section>
+            <section v-component="emoji" v-with="source: emojiText"></section>
           </article>
         </div>
       </div>
@@ -54,6 +47,6 @@
         </p>
       </div>
     </div>
-    <script>require('application');</script>
+    <script src="./build/build.js"></script>
   </body>
 </html>
