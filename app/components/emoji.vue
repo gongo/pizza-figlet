@@ -1,8 +1,13 @@
 <template>
-    <span v-repeat="source | emojiUrl">
-        <br v-if="!$value" />
-        <img v-if="$value" class="emoji" v-attr="src:$value" />
-    </span>
+    <div id="result-pizza-figlet">
+        <header>Preview</header>
+        <section>
+            <span v-repeat="source | emojiUrl">
+                <br v-if="!$value" />
+                <img v-if="$value" class="emoji" v-attr="src:$value" />
+            </span>
+        </section>
+    </div>
 </template>
 
 <script lang="coffee">

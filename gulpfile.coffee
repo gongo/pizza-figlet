@@ -11,12 +11,12 @@ gulp.task 'server', ->
   require './web.js'
 
 gulp.task 'watch', ->
-  gulp.watch ['./app/application.coffee', './app/components/*.vue'], ['js']
+  gulp.watch ['./app/main.coffee', './app/components/*.vue'], ['js']
   gulp.watch ['./app/styles/*.less'], ['css']
 
 gulp.task 'js', ->
   browserify
-    entries: './app/application.coffee'
+    entries: './app/main.coffee'
     transform: ['coffeeify', 'vueify']
   .bundle()
   .pipe source('build.js')
