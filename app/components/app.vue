@@ -8,8 +8,8 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-md-6" v-component="source" v-with="source: emojiText"></div>
-        <div class="col-xs-12 col-md-6" v-component="emoji"  v-with="source: emojiText"></div>
+        <div class="col-xs-12 col-md-6" v-component="source" source="{{emojiText}}"></div>
+        <div class="col-xs-12 col-md-6" v-component="emoji"  source="{{emojiText}}"></div>
     </div>
 
     <div id="footer">

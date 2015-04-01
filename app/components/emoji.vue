@@ -14,6 +14,8 @@
 request = require('superagent')
 
 module.exports =
+  paramAttributes: ['source']
+
   data: ->
     source: ''
     emojiUrls: []

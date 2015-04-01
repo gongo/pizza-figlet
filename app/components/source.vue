@@ -9,6 +9,8 @@
 
 <script lang="coffee">
 module.exports =
+  paramAttributes: ['source']
+
   methods:
     selectSource: (e) ->
       e.target.select()
