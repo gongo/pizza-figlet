@@ -7,6 +7,9 @@ browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 buffer     = require 'vinyl-buffer'
 
+isProduction = ->
+  process.env.NODE_ENV == 'production'
+
 gulp.task 'server', ->
   require './web.js'
 
@@ -15,21 +18,23 @@ gulp.task 'watch', ->
   gulp.watch ['./app/styles/*.less'], ['css']
 
 gulp.task 'js', ->
-  browserify
+  stream = browserify
     entries: './app/main.coffee'
     transform: ['coffeeify', 'vueify']
   .bundle()
   .pipe source('build.js')
   .pipe buffer()
-  .pipe minifyJs()
-  .pipe gulp.dest('public/build')
+
+  stream.pipe minifyJs() if isProduction()
+  stream.pipe gulp.dest('public/build')
 
 gulp.task 'css', ->
-  gulp.src 'app/styles/*.less'
+  stream = gulp.src 'app/styles/*.less'
   .pipe less()
   .pipe concat('build.css')
-  .pipe minifyCss()
-  .pipe gulp.dest('public/build')
 
-gulp.task 'default', ['js', 'css']
-gulp.task 'dev', ['server', 'watch']
+  stream.pipe minifyCss() if isProduction()
+  stream.pipe gulp.dest('public/build')
+
+gulp.task 'build', ['js', 'css']
+gulp.task 'dev', ['build', 'server', 'watch']
