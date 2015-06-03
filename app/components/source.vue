@@ -9,7 +9,7 @@
 
 <script lang="coffee">
 module.exports =
-  paramAttributes: ['source']
+  props: ['source']
 
   methods:
     selectSource: (e) ->

@@ -4,12 +4,12 @@
     </div>
 
     <div class="row" >
-        <div class="col-xs-12 col-md-5" v-component="input"></div>
+        <component class="col-xs-12 col-md-5" is="input"></div>
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-md-6" v-component="source" source="{{emojiText}}"></div>
-        <div class="col-xs-12 col-md-6" v-component="emoji"  source="{{emojiText}}"></div>
+        <component class="col-xs-12 col-md-6" is="source" source="{{emojiText}}"></div>
+        <component class="col-xs-12 col-md-6" is="emoji"  source="{{emojiText}}"></div>
     </div>
 
     <div id="footer">

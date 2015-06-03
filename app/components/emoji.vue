@@ -14,7 +14,7 @@
 request = require('superagent')
 
 module.exports =
-  paramAttributes: ['source']
+  props: ['source']
 
   data: ->
     source: ''
