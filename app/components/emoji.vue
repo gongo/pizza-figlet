@@ -2,9 +2,9 @@
     <div id="result-pizza-figlet">
         <header>Preview</header>
         <section>
-            <span v-repeat="source | emojiUrl">
+            <span v-repeat="names">
                 <br v-if="!$value" />
-                <img v-if="$value" class="emoji" v-attr="src:$value" />
+                <img v-if="$value" class="emoji" v-attr="src:emojiSrc($value)" />
             </span>
         </section>
     </div>
@@ -14,10 +14,9 @@
 request = require('superagent')
 
 module.exports =
-  props: ['source']
+  props: ['names']
 
   data: ->
-    source: ''
     emojiUrls: []
 
   created: ->
@@ -26,14 +25,8 @@ module.exports =
       .end (err, res) =>
         @emojiUrls = JSON.parse(res.text)
 
-  filters:
-    emojiUrl: (text) ->
-      urls = []
-      re = /(?::([\w+-]+?):|\n)/g # :emoji-syntax: or return code
+  methods:
+    emojiSrc: (name) ->
+      @emojiUrls[name]
 
-      while (m = re.exec(text))?
-        key = m[1]
-        urls.push @emojiUrls[key]
-
-      urls
 </script>

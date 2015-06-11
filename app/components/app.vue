@@ -4,12 +4,18 @@
     </div>
 
     <div class="row" >
-        <component class="col-xs-12 col-md-5" is="input"></div>
+        <div class="col-xs-12 col-md-5">
+            <component is="input"></component>
+        </div>
     </div>
 
     <div class="row">
-        <component class="col-xs-12 col-md-6" is="source" source="{{emojiText}}"></div>
-        <component class="col-xs-12 col-md-6" is="emoji"  source="{{emojiText}}"></div>
+        <div class="col-xs-12 col-md-6">
+            <component is="source" source="{{* emojiText}}"></component>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <component is="emoji" names="{{* emojiList}}"></component>
+        </div>
     </div>
 
     <div id="footer">
@@ -31,8 +37,14 @@ module.exports =
 
   data: ->
     emojiText: ''
+    emojiList: []
 
   events:
     updateEmojiText: (text) ->
       @emojiText = text.replace(/\S/g, ':pizza:').replace(/[^\n\S]/g, ':cloud:')
+      @emojiList = []
+      re = /(?::([\w+-]+?):|\n)/g # :emoji-syntax: or return code
+      while (m = re.exec(@emojiText))?
+        key = m[1]
+        @emojiList.push(key)
 </script>
