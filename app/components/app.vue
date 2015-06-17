@@ -11,10 +11,10 @@
 
     <div class="row">
         <div class="col-xs-12 col-md-6">
-            <component is="source" source="{{* emojiText}}"></component>
+            <component is="source" source="{{emojiText}}"></component>
         </div>
         <div class="col-xs-12 col-md-6">
-            <component is="preview" names="{{* emojiList}}"></component>
+            <component is="preview" names="{{emojiList}}"></component>
         </div>
     </div>
 
