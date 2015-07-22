@@ -21,9 +21,4 @@ var server = app.listen(port, function() {
     console.log('Listening on port %d', server.address().port);
 });
 
-if (process.env.NODETIME_ACCOUNT_KEY) {
-    require('nodetime').profile({
-        accountKey: process.env.NODETIME_ACCOUNT_KEY,
-        appName: 'pizza-figlet' // optional
-    });
-}
+require('newrelic');
