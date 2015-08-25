@@ -38,7 +38,7 @@
     "superagent": "^1.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "vue": "^0.12.1",
+    "vue": "^0.12.10",
     "vueify": "^1.1.5"
   },
   "engines": {
