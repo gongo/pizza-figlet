@@ -19,8 +19,6 @@
 nbproject
 Thumbs.db
 
-/public/build
-
 # NPM packages folder.
 node_modules/
 
