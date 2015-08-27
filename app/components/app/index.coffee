@@ -1,3 +1,5 @@
+require('../../styles/app.less')
+
 module.exports =
   template: require('./template.html')
 
