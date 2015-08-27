@@ -1,0 +1,5 @@
+<div id="form">
+    <span class="glyphicon glyphicon-pencil"></span>
+    Enter the text want to emojinize! (Only <strong>ASCII printable characters</strong>)
+    <textarea v-model="inputText" v-on="keyup:updateFigletText(inputText)"></textarea>
+</div>

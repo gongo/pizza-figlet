@@ -14,34 +14,30 @@
     }
   ],
   "scripts": {
-    "start": "gulp dev",
-    "postinstall": "NODE_ENV=production gulp build"
+    "start": "node web.js",
+    "build": "webpack -p",
+    "dev": "npm run start | webpack --watch"
   },
   "directories": {
     "test": "test/"
   },
   "dependencies": {
-    "bootstrap": "^3.2.0",
-    "browserify": "^9.0.3",
-    "coffee-script": "^1.9.1",
-    "coffeeify": "^1.0.0",
     "express": "^4.6.1",
     "figlet": "^1.1.0",
-    "gulp": "^3.8.11",
-    "gulp-concat": "^2.5.2",
-    "gulp-less": "^3.0.2",
-    "gulp-minify-css": "^1.0.0",
-    "gulp-uglify": "^1.1.0",
-    "gulp-watch": "^4.2.0",
-    "insert-css": "^0.2.0",
     "newrelic": "^1.21.1",
     "superagent": "^1.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "vue": "^0.12.10",
-    "vueify": "^1.1.5"
+    "vue": "^0.12.10"
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.2.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.9.1",
+    "css-loader": "^0.16.0",
+    "html-loader": "^0.3.0",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.10.1"
   }
 }
