@@ -1,0 +1,1 @@
+export { useFiglet } from './useFiglet'
