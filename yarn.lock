@@ -9484,6 +9484,14 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
+react-hook-figlet@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-hook-figlet/-/react-hook-figlet-1.0.1.tgz#a4272271cb31b98d752abe0adcb5046615ff7b3d"
+  integrity sha512-RZsqmFFupxcFGEDQ//i0wKpMgFcTqJafsxrPjGbhFYU5TlpKLERLGVHekfdsjYDXB6puzHWxje+40DFuz2GNww==
+  dependencies:
+    "@types/figlet" "^1.5.1"
+    figlet "^1.5.0"
+
 react-icons@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
