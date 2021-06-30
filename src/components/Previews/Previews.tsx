@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
+
+import { EmojiSource } from './components/EmojiSource'
 import { EmojiPreview } from './components/EmojiPreview'
-import { Base, Heading, Textarea } from 'smarthr-ui'
+import { Base, TabBar, TabItem, defaultSpacing } from 'smarthr-ui'
 
 type Props = {
   figletText: string
@@ -19,7 +22,7 @@ export const Previews: React.VFC<Props> = ({ figletText }) => {
     <>
       <Base>
         <Heading type="sectionTitle">FIGlet source</Heading>
-        <Textarea readOnly={true} value={colonsText} />
+        <EmojiSource text={colonsText} />
       </Base>
       <Base>
         <Heading type="sectionTitle">Preview</Heading>
