@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { useFiglet } from 'react-hook-figlet'
 import { Previews } from './components/Previews'
+import { GlobalStyle } from './themes'
 import { Base, Heading, Stack, Textarea, defaultSpacing } from 'smarthr-ui'
 
 export const App: React.VFC = () => {
@@ -14,6 +15,7 @@ export const App: React.VFC = () => {
 
   return (
     <Container>
+      <GlobalStyle />
       <Stack gap="M">
         <Heading>Pizza FIGLet</Heading>
         <Content>
