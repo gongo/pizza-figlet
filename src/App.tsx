@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { useFiglet } from 'react-hook-figlet'
+import { Form } from './components/Form'
 import { Previews } from './components/Previews'
 import { GlobalStyle } from './themes'
-import { Base, Heading, Stack, Textarea, defaultSpacing } from 'smarthr-ui'
+import { Base, Heading, Stack, defaultSpacing } from 'smarthr-ui'
 
 export const App: React.VFC = () => {
-  const [figletText, setSourceText] = useFiglet('Old Banner')
+  const [figletText, setFigletText] = useState<string>('')
 
-  const handleChangeSourceText = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-    setSourceText(e.target.value)
+  const handleChangeFigletText = (text: string) => {
+    setFigletText(text)
   }
 
   return (
@@ -19,7 +19,7 @@ export const App: React.VFC = () => {
       <Stack gap="M">
         <Heading>Pizza FIGLet</Heading>
         <Content>
-          <Textarea width="100%" onChange={handleChangeSourceText} />
+          <Form onChangeFigletText={handleChangeFigletText} />
         </Content>
         <Content>
           <Previews figletText={figletText} />
