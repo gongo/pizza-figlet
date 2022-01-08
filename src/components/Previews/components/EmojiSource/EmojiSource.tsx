@@ -6,7 +6,15 @@ type Props = {
   text: string
 }
 
-export const EmojiSource: React.VFC<Props> = ({ text }) => <Textarea readOnly value={text} />
+export const EmojiSource: React.VFC<Props> = ({ text }) => (
+  <Textarea
+    readOnly
+    onClick={(e: React.MouseEvent<HTMLTextAreaElement>) => {
+      e.currentTarget.select()
+    }}
+    value={text}
+  />
+)
 
 const Textarea = styled(BaseTextarea)`
   width: 100%;
